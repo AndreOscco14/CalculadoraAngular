@@ -1,0 +1,39 @@
+.calculator-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  td {
+    padding: 10px;
+    text-align: center;
+    font-size: 300%;
+    font-family: sans-serif;
+    cursor: pointer;
+  }
+  
+  .result {
+    text-align: right;
+  }
+  
+  .button {
+    border: 1px solid #ccc;
+  }
+  
+  .reset,
+  .calculate {
+    background-color: #ccc;
+  }
+  
+  td:hover {
+    cursor: pointer;
+  }
+  
