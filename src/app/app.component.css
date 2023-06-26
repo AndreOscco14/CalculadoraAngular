@@ -6,6 +6,11 @@
 
   }
   
+.calculator-container .result{
+    background-color: black;
+    color: rgb(40, 203, 40);
+}
+
   table {
     border-collapse: collapse;
     width: 100%;
@@ -30,7 +35,9 @@
   
   .reset,
   .calculate {
-    background-color: #ccc;
+    /* background-color: #ccc; */
+    border: 1px solid #ccc;
+
   }
   
   td:hover {

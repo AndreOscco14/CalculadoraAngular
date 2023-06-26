@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   result: string = '0';
-
+  
   handleButtonClick(value: number | string): void {
     value = value.toString();
 
@@ -22,11 +22,25 @@ export class AppComponent {
     this.result = '0';
   }
 
+  // calculateResult(): void {
+  //   try {
+  //     this.result = eval(this.result);
+  //   } catch (error) {
+  //     this.result = 'Error';
+  //   }
+  // }
+
   calculateResult(): void {
     try {
-      this.result = eval(this.result);
+      if (this.result.includes('sqrt')) {
+        const number = parseFloat(this.result.replace('sqrt', ''));
+        this.result = Math.sqrt(number).toString();
+      } else {
+        this.result = eval(this.result);
+      }
     } catch (error) {
       this.result = 'Error';
     }
   }
+
   }
