@@ -22,18 +22,36 @@ export class AppComponent {
     this.result = '0';
   }
 
+// --------------------------------------------------------
+// Calculo de la raiz cuadrada
   // calculateResult(): void {
   //   try {
+  //     const consecutiveOperatorsRegex = /[+\-*/]{2,}/;
+  
+  //     if (consecutiveOperatorsRegex.test(this.result)) {
+  //       throw new Error('Invalid operation');
+  //     }
+  
   //     this.result = eval(this.result);
   //   } catch (error) {
   //     this.result = 'Error';
   //   }
   // }
+  // --------------------------------------------------------
 
   calculateResult(): void {
     try {
+      const consecutiveOperatorsRegex = /[+\-*/]{2,}/;
+  
+      if (consecutiveOperatorsRegex.test(this.result)) {
+        throw new Error('Invalid operation');
+      }
+  
       if (this.result.includes('sqrt')) {
         const number = parseFloat(this.result.replace('sqrt', ''));
+        if (isNaN(number)) {
+          throw new Error('Invalid operation');
+        }
         this.result = Math.sqrt(number).toString();
       } else {
         this.result = eval(this.result);
@@ -42,5 +60,5 @@ export class AppComponent {
       this.result = 'Error';
     }
   }
-
+  
   }
